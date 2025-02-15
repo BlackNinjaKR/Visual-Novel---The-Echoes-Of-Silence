@@ -5,27 +5,45 @@ define sarah = Character("Sarah", color="#ffffc8", italic=True)
 define mys = Character("???", color="#c8ffc8")
 label start:
 
-    scene street with fade
+    scene street with fade:
+        zoom 1.1
     play music "soft_piano.mp3"
 
     "A quiet, timeworn street bathed in the soft glow of a fading sunset."
     "A taxi pulls up in front of an old, modest family home."
 
-    show mc normal
+    scene taxi with fade:
+        zoom 1.1
+
+    show mc normal at right:
+        yalign 0.6
+        zoom 0.75
+    show taxi_driver at left:
+        yalign 0.6
+        zoom 0.75
+
     mys "I used to believe home was a sanctuary. Now, every step feels like I'm walking through a museum of lost moments."
+
     taxi_driver "Huh?"
     taxi_driver "Sir, you're talking like you just came back from war..."
+
     mys "Yeah"
+
     taxi_driver "Oh... I'm sorry."
+
     mys "It's okay, don't worry about it."
+
     taxi_driver "Sir, if I may ask, what's your name?"
+
     $ mcname = renpy.input("I am ", length=32)
     $ mcname = mcname.strip()
     if not mcname:
         $ mcname = "Mark"
     mc "I'm [mcname]"
+
     taxi_driver "Welcome home, soldier."
     taxi_driver "Sometimes... the hardest part is just opening that door."
+    
     mc "Thank you…"
     mc "It feels like everything I left behind is waiting for me."
 
@@ -34,21 +52,43 @@ label start:
             jump act2
 
         "Pause at the threshold.":
-            scene flashback with dissolve
+            play music "sad_piano.mp3"
+            scene lantern_solo with pixellate:
+                zoom 1.1
             window hide
             "I had come a long way—from messing around and yanking my comrades' panties to standing in the ruins of my own choices."
             "We had been just kids back then, reckless, invincible... before the war stole our innocence."
+            scene cornfield with pixellate:
+                zoom 1.1
+            window hide
             "A younger me had laughed under the sunlit cornfields, sharing quiet moments of camaraderie with the only family I had known."
+            show sarah at center:
+                zoom 1.5
             "Then there was Sarah—her arms around me, her warmth a lifeline in a world that was already pulling me away."
+            scene war_close with dissolve:
+                zoom 1.1
+            window hide
             "But the warmth had faded. The sound of distant explosions had crept in, muffled cries breaking through the silence. A rain-soaked battlefield had stretched before me, and I had watched him fall—my friend, my brother in arms."
+            scene war_fb with dissolve:
+                zoom 1.1
+            window hide
+            show sarah at center:
+                zoom 1.1
+                alpha 0.3
             "A whispered goodbye on a foggy morning. Sarah's fingers slipping from mine. Hope in her eyes. Regret in mine."
             "Memories swirled and blurred, their weight pressing down, suffocating."
+            scene war_tank with dissolve:
+                zoom 1.1
+            window hide
+            show sarah at center:
+                zoom 1.1
+                alpha 0.3
             "The past had never stayed buried. It clung to me, a ghost in every shadow."
-            "Note from developer: Although I'd have liked to insert more images, I'm unable to do so due to a lack of artistic assets"
             window show
 
     label act2:
-    scene living_room with fade
+    scene living_room with fade:
+        zoom 1.1
 
     show emily angry
     emily "You finally came... After all these years, you decide to show up now???"
