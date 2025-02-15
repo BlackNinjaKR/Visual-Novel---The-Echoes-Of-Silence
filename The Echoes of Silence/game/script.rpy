@@ -1,4 +1,4 @@
-﻿define mc = Character("[mcname]", color="#c8ffc8")
+define mc = Character("[mcname]", color="#c8ffc8")
 define emily = Character("Emily", color="#ffc8c8")
 define taxi_driver = Character("Taxi Driver", color="#c8c8ff")
 define sarah = Character("Sarah", color="#ffffc8", italic=True)
@@ -109,7 +109,8 @@ label start:
         "Stand at a respectful distance.":
             "Emily stares at her dad, fuming, her arms folded, as [mcname] respects her space."
 
-    scene study with fade
+    scene study with fade:
+        zoom 1.1
     "[mcname] drifts into his old study, where he discovers a box of unsent letters."
 
     show mc pensive at center:
@@ -122,56 +123,56 @@ label start:
 
     menu:
         "Read the letters immediately.":
-            # Define a list of letters
-            default letter_index = 0
-            default letters = [
-                "My love,\n\nThis morning, I found myself in the garden we planted together. As I gently watered each flower, I recalled the way your eyes would light up when you showed me the first blooms. I could almost feel your hand in mine, guiding me through each new sprout. It was as if the garden was whispering our secrets, reminding me of those blissful mornings when love was simple and every petal held a promise. I miss you so terribly in moments like these, when nature sings our song.",
-                "My dearest, Each morning, I wake hoping for a letter, a sign that you are safe. The days grow long without you. I remember that rainy afternoon when we danced around the kitchen, twirling to our favorite song while the world outside blurred into silver rain. Your laughter was the melody that made even the darkest days shine. Later, Emily tried to mimic our silly dance and laughed just as heartily—an echo of a time when our home was filled with joy and light. I miss the sound of your laughter, and the way you made every moment sparkle.",
-                "I remember the night we danced under the stars. That memory is what keeps me warm when the cold sets in.",
-                "No matter how far you go, no matter how much time passes, my heart will always find its way back to you.",
-                "If you ever return, please promise me one thing: don't let the past steal your future.",
-                "This evening, as the sun melted into a blaze of orange and pink, I sat by the window and let my thoughts wander back to our sunsets together. I remembered how we would sit in silence, content in each other’s presence, as the sky painted our dreams in vivid hues. Tonight, I held your favorite scarf close and felt the warmth of those treasured moments. The fading light stirred a gentle ache in my heart, a reminder of a love that still burns, even in the quiet of loss. I miss you with every setting sun."
-            ]
-
-            # Define the screen for reading letters
-            screen letter_screen():
-                zorder 100
-
-                # Background
-                add "paper_texture.jpg" at truecenter
-
-                # Display letter text
-                text "[letters[letter_index]]" size 40 color "#000000" font "cursive.ttf" xalign 0.5 yalign 0.4
-
-                # Navigation button
-                imagebutton:
-                    idle "left_arrow.png"
-                    action If(letter_index > 0, SetVariable("letter_index", letter_index - 1))
-                    yalign 0.6
-                    xalign 0.5
-
-                imagebutton:
-                    idle "right_arrow.png"
-                    action If(letter_index < len(letters) - 1, SetVariable("letter_index", letter_index + 1))
-                    yalign 0.6
-                    xalign 0.5
-
-                # Close button
-                textbutton "Return" action Hide("letter_screen") xalign 0.5 yalign 0.9
-
-            # Add a way to open the letter screen
-            label read_letters:
-                show study with fade
-                "Mark hesitates before opening the first letter."
-                call screen letter_screen
-                return
+            play music "dramatic_sad_piano.mp3"
+            scene letter with fade:
+                zoom 1.1
+            show sarah3 at center:
+                zoom 0.4
+                yalign 0.5
+                alpha 0.7
+            hide mc pensive
+            sarah "My love... This morning, I found myself in the garden we planted together..."
+            sarah "As I gently watered each flower, I recalled the way your eyes would light up when you showed me the first blooms."
+            sarah "I could almost feel your hand in mine, guiding me through each new sprout..."
+            sarah "It was as if the garden was whispering our secrets, reminding me of those blissful mornings when love was simple and every petal held a promise..."
+            sarah "I miss you so terribly in moments like these, when nature sings our song."
+            show sarah3 at left:
+                zoom 0.4
+                yalign 0.5
+                alpha 0.7
+            show sarah2 at center:
+                zoom 0.4
+                yalign 0.5
+                alpha 0.7
+            sarah "My dearest, Each morning, I wake up hoping for a letter, a sign that you are safe..."
+            sarah "The days grow long without you..."
+            sarah "I remember that rainy afternoon when we danced around the kitchen, twirling to our favorite song while the world outside blurred into silver rain."
+            sarah "Your laughter was the melody that made even the darkest days shine."
+            sarah "ALthough later, Emily tried to mimic our silly dance and laughed just as heartily..."
+            sarah "I miss the sound of your laughter, and the way you made every moment sparkle..."
+            show sarah2 at right:
+                zoom 0.4
+                yalign 0.5
+                alpha 0.7
+            show sarah4 at center:
+                zoom 0.4
+                yalign 0.5
+                alpha 0.7
+            sarah "I remember the night we danced under the stars. That memory is what keeps me warm when the cold sets in."
+            sarah "No matter how far you go, no matter how much time passes, my heart will always find its way back to you."
+            sarah "If you ever return, please promise me one thing: don't let the past steal your future."
         "Set them aside for now.":
             "He places the letters back, knowing he'll return to them when ready."
+            jump bro
 
 
-    scene battlefield with fade
-    "A flashback engulfs the screen—a war-torn landscape filled with chaos."
-    show mc sad
+    scene mc cry with fade:
+        zoom 1.1
+    show sarah4 at center:
+        zoom 0.4
+        yalign 0.5
+        alpha 0.7
+    play music "calm.mp3"
     mc "Every explosion, every loss... They weren't just echoes of war—they were shattered promises."
     mc "Each blast tore through the quiet of my soul, a stark reminder of vows I made in the heat of battle—to protect, to return, to never let the darkness consume what we built."
     mc "I remember the day we parted, the tearful goodbye where hope was our only shield against the inevitable pain."
@@ -179,7 +180,7 @@ label start:
     mc "And now, as I stand amidst these ruins of memory, each shattered promise whispers a lesson: that the cost of war is not measured in the fires of battle alone, but in the tender moments of love and trust we lose along the way."
 
     menu:
-        "Linger on a memory.":
+        "Linger on the memory.":
             jump sar
         "Skip ahead.":
             "[mcname] is unable to resist the memories of those angelic eyes..."
@@ -188,22 +189,39 @@ label start:
             jump sar
     
     label sar:
-    scene sunlit_room with fade
-    show sarah
+    scene lantern_sarah with fade:
+        zoom 1.1
     "[mcname] remembers that final smile with an ache that never fades—a smile that held the warmth of countless shared mornings, the softness of whispered dreams, and the strength to face the looming darkness."
+    show sarah4 at right:
+        zoom 0.4
+        yalign 0.5
     "It was as if, in that fleeting moment, Sarah poured every hope and every unspoken goodbye into that one, final smile."
     "Even now, as the memory replays in his mind, it feels like a beacon—a light that guides him through the bleak corridors of war and loss, reminding him that love, even in its quietest moments, endures beyond the confines of time."
     sarah "Please, forgive yourself as you have always forgiven me."
+    show mc sad at left:
+        zoom 0.75
+        yalign 0.6
+        alpha 0.3
     mc "Forgive myself...?"
     mc "How?"
     mc "How can I forgive a heart that's been shattered by your absense?"
     mc "I returned safely like I promised..."
+    hide mc sad
+    show mc angry at left:
+        zoom 0.75
+        yalign 0.6
+        alpha 0.3
     mc "But YOU..."
     mc "I had asked you to wait..."
     mc "Was it really that easy for you to leave me behind...?"
     mc "..."
     mc "You promised me that we were going to leave together..."
     mc "It was me who went to the war and yet..."
+    hide mc angry
+    show mc sad at left:
+        zoom 0.75
+        yalign 0.6
+        alpha 0.3
     mc "I'm still breating while you're six feet under... It should've been me instead."
     sarah "I need you need to stay. For Emily. For Us."
     mc "Alone...? It's going to feel lonely without you by my side..."
@@ -212,21 +230,32 @@ label start:
     sarah "Moreover, you will always have me by your side..."
     sarah "In your heart and your memories..."
     sarah "I'll forever live on inside your memories."
+    hide mc sad
 
     menu:
         "Embrace the emotions.":
-            show mc sad
+            show mc happy at left:
+                zoom 0.75
+                yalign 0.6
+                alpha 0.3
             "[mcname] lets his tears fall, a step toward healing."
         "Resist the vulnerability.":
-            show mc angry
+            show mc angry at left:
+                zoom 0.75
+                yalign 0.6
             "He snaps back to reality, unwilling to let the emotions take hold."
 
-    scene study with fade
+    label bro:
+    scene study with fade:
+        zoom 1.1
     "Emily comes rushing to [mcname]'s study with tears in her eyes"
-    show emily sad
+    show emily sad at right:
+        zoom 0.75
+        yalign 0.6
     emily "I just dreamt about mom... She left me a message... She's still here..."
 
-    scene study2 with fade
+    scene living_room with fade:
+        zoom 1.1
     "[mcname] and Emily finally sit down together."
     mc "I left thinking I could outrun my demons. But these memories of her… they remind me of my failures."
     emily "Maybe if you'd been here, I wouldn't have felt so alone."
