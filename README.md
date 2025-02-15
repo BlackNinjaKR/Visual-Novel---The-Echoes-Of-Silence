@@ -2,8 +2,8 @@
 *NOT A Heartwarming Tale of Crushing Despair*  
 
 ## 🤡 What is This, and Why Are You Here?  
-So, you woke up this morning, stretched, grabbed a coffee, and thought,  
-*"You know what I need? A visual novel that slaps me in the face with emotional damage!"*  
+So, you woke up this morning, stretched, grabbed a coffee, and thought,
+*"You know what I need? A visual novel that slaps me in the face with emotional damage!"*
 Well, CONGRATULATIONS! You've unfortunately *LOST* the **Sadness Lottery**! 🎉  
 
 Welcome to **The Echoes of Silence**, a **ren’py-powered existential crisis** disguised as a **game**. Here, you take on the role of **a broken man with a tragic backstory™**, returning home after years of **running away from his problems like an Olympic sprinter**. What awaits you?  
