@@ -1,0 +1,52 @@
+# Byte-compiled Python files
+*.pyc
+*.pyo
+
+# Ren'Py compiled files
+*.rpyc
+*.rpymc
+*.rpyb
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# Log and error files
+log.txt
+errors.txt
+traceback.txt
+lint.txt
+
+# Ren'Py cache and temporary files
+cache/
+tmp/
+
+# Save files
+saves/
+
+# Ren'Py distribution directories
+*-dists/
+build/
+
+# Ren'Py SDK files
+renpy/
+renpy.app/
+renpy.exe
+renpy.sh
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python virtual environment
+venv/
+env/
