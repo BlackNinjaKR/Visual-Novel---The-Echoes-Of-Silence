@@ -10,7 +10,7 @@ Welcome to **The Echoes of Silence**, a **ren’py-powered existential crisis** 
 
 ✨ **Old memories.**  
 ✨ **Emotional baggage.**  
-✨ **A daughter who probably... Strike that... DEFINITELY hates you.**  
+✨ **A daughter who probably... DEFINITELY hates you.**  
 ✨ **A war that left more scars than Twitter... I mean X drama.**  
 ✨ **A pile of long-forgotten love letters you should’ve read years ago.**  
 
