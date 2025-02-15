@@ -69,20 +69,11 @@ label start:
                 zoom 1.1
             window hide
             "But the warmth had faded. The sound of distant explosions had crept in, muffled cries breaking through the silence. A rain-soaked battlefield had stretched before me, and I had watched him fall—my friend, my brother in arms."
-            scene war_fb with dissolve:
-                zoom 1.1
-            window hide
             show sarah at center:
                 zoom 1.1
                 alpha 0.3
             "A whispered goodbye on a foggy morning. Sarah's fingers slipping from mine. Hope in her eyes. Regret in mine."
             "Memories swirled and blurred, their weight pressing down, suffocating."
-            scene war_tank with dissolve:
-                zoom 1.1
-            window hide
-            show sarah at center:
-                zoom 1.1
-                alpha 0.3
             "The past had never stayed buried. It clung to me, a ghost in every shadow."
             window show
 
@@ -90,10 +81,17 @@ label start:
     scene living_room with fade:
         zoom 1.1
 
-    show emily angry
+    show emily angry at center:
+        zoom 0.75
+        yalign 0.6
     emily "You finally came... After all these years, you decide to show up now???"
 
-    show mc sad
+    show emily angry at right:
+        zoom 0.75
+        yalign 0.6
+    show mc sad at left:
+        zoom 0.75
+        yalign 0.6
     mc "Emily, I—I never meant to leave you. I thought escaping the war would help me escape my demons, but I see now I only ran from you."
 
     emily "Every time I saw your silhouette disappear, I wondered if you'd ever come back."
@@ -101,16 +99,22 @@ label start:
 
     menu:
         "Gently approach her.":
-            show emily sad
+            show emily sad at right:
+                zoom 0.75
+                yalign 0.6
+            show mc happy at left:
+                zoom 0.75
+                yalign 0.6
             "Emily hesitates, then slowly allows [mcname] to embrace her."
         "Stand at a respectful distance.":
-            show emily angry
             "Emily stares at her dad, fuming, her arms folded, as [mcname] respects her space."
 
     scene study with fade
     "[mcname] drifts into his old study, where he discovers a box of unsent letters."
 
-    show mc shocked
+    show mc pensive at center:
+        zoom 0.75
+        yalign 0.6
     mc "These letters… they're pieces of a love I thought was lost."
 
     play voice "sarah_voiceover.mp3"
@@ -121,8 +125,8 @@ label start:
             # Define a list of letters
             default letter_index = 0
             default letters = [
-                "Dear [mcname],\n\nThis morning, I found myself in the garden we planted together. As I gently watered each flower, I recalled the way your eyes would light up when you showed me the first blooms. I could almost feel your hand in mine, guiding me through each new sprout. It was as if the garden was whispering our secrets, reminding me of those blissful mornings when love was simple and every petal held a promise. I miss you so terribly in moments like these, when nature sings our song."
-                "Dearest [mcname], Each morning, I wake hoping for a letter, a sign that you are safe. The days grow long without you. I remember that rainy afternoon when we danced around the kitchen, twirling to our favorite song while the world outside blurred into silver rain. Your laughter was the melody that made even the darkest days shine. Later, Emily tried to mimic our silly dance and laughed just as heartily—an echo of a time when our home was filled with joy and light. I miss the sound of your laughter, and the way you made every moment sparkle.",
+                "My love,\n\nThis morning, I found myself in the garden we planted together. As I gently watered each flower, I recalled the way your eyes would light up when you showed me the first blooms. I could almost feel your hand in mine, guiding me through each new sprout. It was as if the garden was whispering our secrets, reminding me of those blissful mornings when love was simple and every petal held a promise. I miss you so terribly in moments like these, when nature sings our song."
+                "My dearest, Each morning, I wake hoping for a letter, a sign that you are safe. The days grow long without you. I remember that rainy afternoon when we danced around the kitchen, twirling to our favorite song while the world outside blurred into silver rain. Your laughter was the melody that made even the darkest days shine. Later, Emily tried to mimic our silly dance and laughed just as heartily—an echo of a time when our home was filled with joy and light. I miss the sound of your laughter, and the way you made every moment sparkle.",
                 "I remember the night we danced under the stars. That memory is what keeps me warm when the cold sets in.",
                 "No matter how far you go, no matter how much time passes, my heart will always find its way back to you.",
                 "If you ever return, please promise me one thing: don't let the past steal your future.",
@@ -131,7 +135,6 @@ label start:
 
             # Define the screen for reading letters
             screen letter_screen():
-                modal True  # Prevent interactions outside this screen
                 zorder 100
 
                 # Background
@@ -144,14 +147,14 @@ label start:
                 imagebutton:
                     idle "left_arrow.png"
                     action If(letter_index > 0, SetVariable("letter_index", letter_index - 1))
-                    xpos 100
-                    ypos 400
+                    yalign 0.6
+                    xalign 0.5
 
                 imagebutton:
                     idle "right_arrow.png"
                     action If(letter_index < len(letters) - 1, SetVariable("letter_index", letter_index + 1))
-                    xpos 1100
-                    ypos 400
+                    yalign 0.6
+                    xalign 0.5
 
                 # Close button
                 textbutton "Return" action Hide("letter_screen") xalign 0.5 yalign 0.9
