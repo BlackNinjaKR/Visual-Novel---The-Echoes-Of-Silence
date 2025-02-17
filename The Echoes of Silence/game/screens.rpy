@@ -289,12 +289,17 @@ screen navigation():
 
     vbox:
         style_prefix "navigation"
+        
+        xpos gui.navigation_xpos
+        yalign 0.5
 
-        xpos 0.47
-        yalign 0.8
 
         spacing gui.navigation_spacing
 
+        if main_menu:
+            xpos 0.46
+            yalign 0.8
+        
         if main_menu:
 
             textbutton _("Start") action Start()

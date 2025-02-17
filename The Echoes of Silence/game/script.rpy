@@ -137,7 +137,7 @@ label start:
             sarah "I could almost feel your hand in mine, guiding me through each new sprout..."
             sarah "It was as if the garden was whispering our secrets, reminding me of those blissful mornings when..."
             sarah "Love was simple and every petal held a promise..."
-            sarah "I miss you so terribly in moments like these, when nature sings our song."
+            sarah "I miss you... I miss you so terribly in moments like these, when nature sings our song."
             show sarah3 at left:
                 zoom 0.4
                 yalign 0.5
@@ -161,7 +161,7 @@ label start:
                 zoom 0.4
                 yalign 0.5
                 alpha 0.7
-            sarah "I remember the night we danced under the stars. That memory is what keeps me warm when the cold sets in."
+            sarah "I remember the night we danced under the stars. The memory is what keeps me warm when the cold sets in."
             sarah "No matter how far you go, no matter how much time passes, my heart will always find its way back to you."
             sarah "If you ever return, please promise me one thing: don't let the past steal your future."
         "Set them aside for now.":
@@ -550,6 +550,7 @@ label start:
     sarah "It lingers in the spaces between laughter..."
     sarah "In the echoes of old memories, in the way we carry those we've lost forward with us."
 
+    sarah "*inhale*...*sigh*"
     sarah "Maybe you've lost someone..."
     sarah "Maybe you're still trying to make peace with the past..."
     sarah "Or maybe, like [mcname], you're afraid to open a door you thought was closed forever."
@@ -561,7 +562,10 @@ label start:
     sarah "Whatever you choose… just know that you are not alone."
     hide sarah3
     ""
-    "Thank you for playing this game"
+    "Thank you for playing \"The Echoes Of Silence\""
+    "This is my first VN project which I'm releasing to the public"
+    "Credits:"
+    "Art: AI-generated\nMusic: Pixabay\nVoice Actor: Manami Sarkar\nScrip-writing & Development: BlackNinjaKR"
     "With Love... <3"
     "From BlackNinjaKR"
 
