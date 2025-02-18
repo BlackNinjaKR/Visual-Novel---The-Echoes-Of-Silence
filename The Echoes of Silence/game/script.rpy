@@ -4,12 +4,31 @@ define taxi_driver = Character("Taxi Driver", color="#c8c8ff")
 define sarah = Character("Sarah", color="#ffffc8")
 define mys = Character("???", color="#c8ffc8")
 
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    show text "BlackNinjaKR presents" with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+    with Pause(1)
+
+    show text "A demo Visual Novel" with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
+
 label start:
     scene street with fade:
         zoom 1.1
     play music "soft_piano.mp3" loop fadein 0.5
 
-    "A quiet, timeworn street bathed in the soft glow of a fading sunset."
+    ""
     "A taxi pulls up in front of an old, modest family home."
 
     scene taxi with fade:
@@ -22,16 +41,17 @@ label start:
         yalign 0.6
         zoom 0.75
 
-    mys "I used to believe home was a sanctuary. Now, every step feels like I'm walking through a museum of lost moments."
+    mys "I never imagined I'd be able to revisit this place alive..."
+    mys "Every step feels like I'm walking barefoot on glass shards of the moments I missed..."
 
     taxi_driver "Huh?"
     taxi_driver "Sir, you're talking like you just came back from war..."
 
-    mys "Yeah"
+    mys "Yeah..."
 
     taxi_driver "Oh... I'm sorry."
 
-    mys "It's okay, don't worry about it."
+    mys "It's okay, don't fret about it."
 
     taxi_driver "Sir, if I may ask, what's your name?"
 
@@ -42,7 +62,11 @@ label start:
     mc "I'm [mcname]"
 
     taxi_driver "Welcome home, soldier."
-    taxi_driver "Sometimes... the hardest part is just opening that door."
+
+    mc "I can't help but feel bittersweet about reuniting with the people I had left behind..."
+
+    taxi_driver "I understand sir... Duty called and you couldn't say no."
+    taxi_driver "Although sometimes... the hardest part is just taking the first step."
     
     mc "Thank you…"
     mc "It feels like everything I left behind is waiting for me."
@@ -56,25 +80,28 @@ label start:
             scene lantern_solo with pixellate:
                 zoom 1.1
             window hide
-            "I had come a long way—from messing around and yanking my comrades' panties to standing in the ruins of my own choices."
-            "We had been just kids back then, reckless, invincible... before the war stole our innocence."
+            mc "I had come a long way—from messing around and yanking my comrades' panties to standing amidst the corpses of my brother-in-arms."
+            mc "We had been just kids back then, reckless, invincible... before the war stole our innocence."
             scene cornfield with pixellate:
                 zoom 1.1
             window hide
-            "A younger me had laughed under the sunlit cornfields, sharing quiet moments of camaraderie with the only family I had known."
+            mc "A younger me had laughed under the sunlit cornfields, sharing quiet moments of camaraderie with the only family I had known."
             show sarah at center:
                 zoom 0.4
-            "Then there was Sarah—her arms around me, her warmth a lifeline in a world that was already pulling me away."
+            mc "Then there was her—Sarah..."
+            mc "Whenever I close my eyes, I can still feel her arms around me,"
+            mc "Her warmth felt like a lifeline in a world that was already pulling me away."
             scene war_close with dissolve:
                 zoom 1.1
             window hide
-            "But the warmth had faded. The sound of distant explosions had crept in, muffled cries breaking through the silence. A rain-soaked battlefield had stretched before me, and I had watched him fall—my friend, my brother in arms."
+            mc "But the warmth had faded sooner than I wanted it to."
+            mc "The sound of distant explosions had crept in, muffled cries breaking through the silence. A rain-soaked battlefield stretching before me, as I watched all of them fall—my friends, my comrades, my brother in arms."
             show sarah at center:
                 zoom 0.4
                 alpha 0.3
-            "A whispered goodbye on a foggy morning. Sarah's fingers slipping from mine. Hope in her eyes. Regret in mine."
-            "Memories swirled and blurred, their weight pressing down, suffocating."
-            "The past had never stayed buried. It clung to me, a ghost in every shadow."
+            mc "Sarah was like a whispered goodbye on a foggy morning..."
+            mc "I still get nightmares about her fingers slipping from mine... Hope in her eyes... Regret in mine."
+            mc "And now... After surviving that nightmare, I never expected her to be one to get to be the ghost amongst us..."
             window show
 
     label act2:
@@ -85,7 +112,9 @@ label start:
     show emily angry at center:
         zoom 0.75
         yalign 0.6
-    emily "You finally came... After all these years, you decide to show up now???"
+    emily "You came..."
+    emily "After all these years... You decide to show up NOW!?!"
+
 
     show emily angry at right:
         zoom 0.75
@@ -93,10 +122,24 @@ label start:
     show mc sad at left:
         zoom 0.75
         yalign 0.6
-    mc "Emily, I—I never meant to leave you. I thought escaping the war would help me escape my demons, but I see now I only ran from you."
+    mc "Emily, I—"
+    emily "YOU DIDN'T BOTHER VISITING US EVEN WHEN MOM DIED..."
+    emily "YOU WEREN'T THERE FOR US..."
+    mc "Emi—"
+    emily "YOU WEREN'T EVEN THERE FOR ME WHEN {b}{i}I{/i}{/b} NEEDED YOU THE MOST!"
+    emily "I HAD NO ONE AND YOU LEFT ME TO FEND FOR MYSELF!"
+    mc "Emily, I—I never meant to leave you or Sarah behind..."
+    mc "I thought escaping the war would help me escape that nightmare and return to you guys, but I was caught and deported back to the battlefield."
 
+    show emily sad at right:
+        zoom 0.75
+        yalign 0.6
     emily "Every time I saw your silhouette disappear, I wondered if you'd ever come back."
-    mc "I'm sorry I wasn't there when you needed me."
+    emily "And now that I finally accepted that you weren't coming... You have the audacity to show up at our door?"
+    mc "I'm sorry I wasn't there when you needed me... But I'm here now"
+    mc "You've been a really strong girl throughout this ordeal..."
+    mc "But you can let loose now... I'm here, aren't I?"
+    emily "..."
 
     menu:
         "Gently approach her.":
@@ -108,11 +151,14 @@ label start:
                 yalign 0.6
             "Emily hesitates, then slowly allows [mcname] to embrace her."
         "Stand at a respectful distance.":
+            show emily angry at right:
+                zoom 0.75
+                yalign 0.6
             "Emily stares at her dad, fuming, her arms folded, as [mcname] respects her space."
 
     scene study with fade:
         zoom 1.1
-    "[mcname] drifts into his old study, where he discovers a box of unsent letters."
+    "[mcname] walks into his old study, where he discovers a box of unsent letters."
 
     show mc pensive at center:
         zoom 0.75
@@ -176,11 +222,11 @@ label start:
         yalign 0.5
         alpha 0.7
     play music "calm.mp3"
-    mc "Every explosion, every loss... They weren't just echoes of war—they were shattered promises."
-    mc "Each blast tore through the quiet of my soul, a stark reminder of vows I made in the heat of battle—to protect, to return, to never let the darkness consume what we built."
+    mc "Every explosion, every corpse... They weren't just echoes of the war—they were shattered promises."
+    mc "Each blast tore through the quiet of my soul, a stark reminder of vows I made in the heat of battle—to protect my comrades and my country, to return to your loving arms."
     mc "I remember the day we parted, the tearful goodbye where hope was our only shield against the inevitable pain."
     mc "With every fallen comrade, I felt the weight of promises broken, of futures stolen by the relentless cruelty of conflict."
-    mc "And now, as I stand amidst these ruins of memory, each shattered promise whispers a lesson: that the cost of war is not measured in the fires of battle alone, but in the tender moments of love and trust we lose along the way."
+    mc "And as I stood amidst those ruins of broken promises and heartbreaks, every man whispered a lesson: that the cost of war is not measured in the fires of battle alone, but in the tender moments of love and trust we lost along the way."
 
     menu:
         "Linger on the memory.":
@@ -194,7 +240,7 @@ label start:
     label sar:
     scene lantern_sarah with fade:
         zoom 1.1
-    "[mcname] remembers that final smile with an ache that never fades—a smile that held the warmth of countless shared mornings, the softness of whispered dreams, and the strength to face the looming darkness."
+    "[mcname] remembers that final smile with an ache that never faded—a smile that held the warmth of countless shared mornings, the softness of whispered dreams, and the strength to face the inevitable."
     show sarah4 at right:
         zoom 0.4
         yalign 0.5
@@ -263,9 +309,9 @@ label start:
     "[mcname] and Emily go back to the dimly lit living room."
     scene living_room with fade:
         zoom 1.1
-    "Shadows flicker against the walls, stretching long and tired, much like the silence between father and daughter."
+    "Shadows flicker against the walls, stretching long and tired, just like the silence between father and daughter."
     "[mcname] and Emily finally sit down together, the space between them more than just physical."
-    "It's years of absence, of unsaid words, of moments stolen by time and regret."
+    "The years of absence, of unsaid words, of moments stolen by time and regret finally catching up."
     "The silence is heavy, pressing, but for once, neither of them runs from it."
     show mc sad at left:
         zoom 0.75
@@ -402,7 +448,7 @@ label start:
     emily "..."
     mc "..."
     emily "..."
-    "For a long moment, neither speaks."
+    "Minutes pass but neither speaks."
     "The silence is thick, not with tension, but with the weight of all that has been left unsaid."
 
     show emily shocked at right:
@@ -412,7 +458,7 @@ label start:
     show mc sad at left:
         zoom 0.75
         yalign 0.6
-    "[mcname] turns slightly, his grip on the lantern tightening."
+    "[mcname] turns slightly, frowning with a grim expression of misery and sadness."
 
     emily "(swallowing, her voice barely above a whisper) She left me a message... She is still here."
 
