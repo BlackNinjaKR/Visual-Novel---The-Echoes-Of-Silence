@@ -14,12 +14,6 @@ label splashscreen:
     hide text with dissolve
     with Pause(1)
 
-    show text "A demo Visual Novel" with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-
     return
 
 
@@ -170,7 +164,7 @@ label start:
 
     menu:
         "Read the letters immediately.":
-            play music "dramatic_sad_piano_low.mp3"
+            play music "dramatic_sad_piano_low.wav"
             scene letter with fade:
                 zoom 1.1
             show sarah3 at center:
@@ -178,11 +172,17 @@ label start:
                 yalign 0.5
                 alpha 0.7
             hide mc pensive
+            voice "p1 L1.ogg"
             sarah "My love... This morning, I found myself in the garden we planted together..."
+            voice "P1 L2.ogg"
             sarah "As I gently watered each flower, I recalled the way your eyes would light up when you showed me the first blooms."
+            voice "P1 L3.ogg"
             sarah "I could almost feel your hand in mine, guiding me through each new sprout..."
-            sarah "It was as if the garden was whispering our secrets, reminding me of those blissful mornings when..."
+            voice "P1 L4.ogg"
+            sarah "It was as if the garden was whispering our secrets, and reminding me of those blissful mornings when..."
+            voice "P1 L5.ogg"
             sarah "Love was simple and every petal held a promise..."
+            voice "P1 L6(last).ogg"
             sarah "I miss you... I miss you so terribly in moments like these, when nature sings our song."
             show sarah3 at left:
                 zoom 0.4
@@ -192,12 +192,19 @@ label start:
                 zoom 0.4
                 yalign 0.5
                 alpha 0.7
+            voice "P2 L1.ogg"
             sarah "My dearest, Each morning, I wake up hoping for a letter, a sign that you are safe..."
+            voice "P2 L2.ogg"
             sarah "The days grow long without you."
+            voice "AUD-20250218-WA0010.ogg"
             sarah "I remember that rainy afternoon when we danced around the kitchen..."
+            voice "P2 L3.ogg"
             sarah "Twirling to our favorite song while the world outside blurred into silver rain."
+            voice "P2 L4.ogg"
             sarah "Your laughter was the melody that made even the darkest days shine."
+            voice "P2 L5.ogg"
             sarah "Although later, Emily tried to mimic our silly dance and laughed just as heartily..."
+            voice "P2 L6(last).ogg"
             sarah "I miss the sound of your laughter, and the way you made every moment sparkle..."
             show sarah2 at right:
                 zoom 0.4
@@ -207,8 +214,11 @@ label start:
                 zoom 0.4
                 yalign 0.5
                 alpha 0.7
+            voice "P3 L1.ogg"
             sarah "I remember the night we danced under the stars. The memory is what keeps me warm when the cold sets in."
+            voice "P3 L2.ogg"
             sarah "No matter how far you go, no matter how much time passes, my heart will always find its way back to you."
+            voice "P3 L3(last).ogg"
             sarah "If you ever return, please promise me one thing: don't let the past steal your future."
         "Set them aside for now.":
             "He places the letters back, knowing he'll return to them when ready."
@@ -223,7 +233,7 @@ label start:
         alpha 0.7
     play music "calm.mp3"
     mc "Every explosion, every corpse... They weren't just echoes of the war—they were shattered promises."
-    mc "Each blast tore through the quiet of my soul, a stark reminder of vows I made in the heat of battle—to protect my comrades and my country, to return to your loving arms."
+    mc "Each blast tore through the quiet of my soul, a stark reminder of vows I made in the heat of battle—to protect my comrades, my country and to return to your loving arms."
     mc "I remember the day we parted, the tearful goodbye where hope was our only shield against the inevitable pain."
     mc "With every fallen comrade, I felt the weight of promises broken, of futures stolen by the relentless cruelty of conflict."
     mc "And as I stood amidst those ruins of broken promises and heartbreaks, every man whispered a lesson: that the cost of war is not measured in the fires of battle alone, but in the tender moments of love and trust we lost along the way."
@@ -541,7 +551,7 @@ label start:
             "But for once, it isn't the only thing in the space between them."
             "There is warmth, too..."
             "There is love..."
-            "And for tonight, that is enough."
+            "And for tonight, that is {i}enough{/i}."
 
         "Embrace the silence.":
             show emily shocked at right:
@@ -578,9 +588,9 @@ label start:
 
             "For years, silence was his prison..."
             "Tonight, it is something else entirely..."
-            "A beginning."
+            "{i}A new beginning{/i}."
 
-    play music "calm.mp3"
+    play music "calm (mp3cut.net).wav"
     scene black with fade:
         zoom 3
     "As the screen fades to black, a quiet moment lingers—"
@@ -596,23 +606,37 @@ label start:
     sarah "It lingers in the spaces between laughter..."
     sarah "In the echoes of old memories, in the way we carry those we've lost forward with us."
 
+    voice "P4 L1.ogg"
     sarah "*inhale*...*sigh*"
+    voice "P4 L2.ogg"
     sarah "Maybe you've lost someone..."
+    voice "P4 L3.ogg"
     sarah "Maybe you're still trying to make peace with the past..."
+    voice "P4 L4.ogg"
     sarah "Or maybe, like [mcname], you're afraid to open a door you thought was closed forever."
 
+    voice "P4 L5.ogg"
     sarah "But you're still here..."
+    voice "P4 L6.ogg"
     sarah "And that means there's still time—"
+    voice "P4 L7.ogg"
     sarah "To heal, to forgive, to hold on, or to let go."
 
+    voice "P4 L8(last).ogg"
     sarah "Whatever you choose… just know that you are not alone."
     hide sarah3
     ""
-    "Thank you for playing \"The Echoes Of Silence\""
-    "This is my first VN project which I'm releasing to the public"
-    "Credits:"
-    "Art: AI-generated\nMusic: Pixabay\nVoice Actor: Manami Sarkar\nScrip-writing & Development: BlackNinjaKR"
-    "With Love... <3"
-    "From BlackNinjaKR"
+    "Thank you for playing \"The Echoes of Silence.\""
+    "This is my first visual novel project, and I know it's far from perfect."
+    "I truly appreciate you taking the time to experience it, despite any flaws or mistakes I may have made."
+
+    "🎭 Credits 🎭"
+    "🖼️ Art: AI-generated\n🎵 Music: Pixabay\n🎙️ Voice Acting: Manami Sarkar\n✍️ Writing & Development: BlackNinjaKR"
+
+    "I’m still learning, and your support means the world to me."
+    "Thank you for being part of this journey. ❤️"
+
+    "~ BlackNinjaKR"
+
 
     return
