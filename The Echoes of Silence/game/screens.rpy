@@ -300,6 +300,10 @@ screen navigation():
             xpos 0.46
             yalign 0.8
         
+        if renpy.current_screen().screen_name[0] != "main_menu":
+            xpos gui.navigation_xpos
+            yalign 0.5
+        
         if main_menu:
 
             textbutton _("Start") action Start()
