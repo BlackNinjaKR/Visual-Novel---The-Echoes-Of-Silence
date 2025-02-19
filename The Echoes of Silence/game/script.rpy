@@ -256,6 +256,7 @@ label start:
         yalign 0.5
     "It was as if, in that fleeting moment, Sarah poured every hope and every unspoken goodbye into that one, final smile."
     "Even now, as the memory replays in his mind, it feels like a beacon—a light that guides him through the bleak corridors of war and loss, reminding him that love, even in its quietest moments, endures beyond the confines of time."
+    voice "P5 L1.ogg"
     sarah "Please, forgive yourself as you have always forgiven me."
     show mc sad at left:
         zoom 0.75
@@ -282,13 +283,17 @@ label start:
         yalign 0.6
         alpha 0.3
     mc "I'm still breating while you're six feet under... It should've been me instead."
-    sarah "I need you need to stay. For Emily. For Us."
+    voice "P5 L2.ogg"
+    sarah "I need you to stay. For Emily. For Us."
     mc "Alone...? It's going to feel lonely without you by my side..."
+    voice "P5 L3.ogg"
     sarah "My love..."
+    voice "P5 L4.ogg"
     sarah "Are you sure you're going to feel lonely with Emily by your side?"
+    voice "P5 L5.ogg"
     sarah "Moreover, you will always have me by your side..."
-    sarah "In your heart and your memories..."
-    sarah "I'll forever live on inside your memories."
+    voice "P5 L6(last).ogg"
+    sarah "In your heart and your memories."
     hide mc sad
 
     menu:
@@ -439,9 +444,16 @@ label start:
 
     
     play music calm loop fadein 3.0
-    scene black with fade:
-        zoom 3
-    "Fast forward a few days, Emily and [mcname] visit the local lantern rite festival..." 
+
+    scene black
+    with Pause(0.5)
+
+    show text "Fast forward a few days, Emily and [mcname] visit the local lantern rite festival..."  with dissolve
+    with Pause(1.5)
+
+    hide text with dissolve
+    with Pause(0.5)
+    
     scene lantern_emily with fade:
         zoom 1.1
     "A vast ocean of midnight blue stretches above them, an endless sky stitched with sparkling lanterns and stars."
@@ -507,7 +519,7 @@ label start:
 
     "Emily watches, her lips pressed together, her eyes glassy with something unshed."
     "[mcname] watches her instead, searching for traces of Sarah in her—"
-    show sarah3 at right with fade:
+    show sarah3 at right:
         zoom 0.4
         yalign 0.5
         alpha 0.2
@@ -600,11 +612,14 @@ label start:
         yalign 0.5
         alpha 0.5
     ""
+    voice "P6 L1.ogg"
     sarah "Grief is love that has nowhere to go."
-    sarah "But love…"
-    sarah "Love never truly leaves..."
+    voice "P6 L2.ogg"
+    sarah "But love… Love never truly leaves..."
+    voice "P6 L3.ogg"
     sarah "It lingers in the spaces between laughter..."
-    sarah "In the echoes of old memories, in the way we carry those we've lost forward with us."
+    voice "P6 L4(last).ogg"
+    sarah "It lingers in our memories of those we've lost along the way."
 
     voice "P4 L1.ogg"
     sarah "*inhale*...*sigh*"
@@ -625,18 +640,51 @@ label start:
     voice "P4 L8(last).ogg"
     sarah "Whatever you choose… just know that you are not alone."
     hide sarah3
-    ""
-    "Thank you for playing \"The Echoes of Silence.\""
-    "This is my first visual novel project, and I know it's far from perfect."
-    "I truly appreciate you taking the time to experience it, despite any flaws or mistakes I may have made."
+    "THE END"
 
-    "🎭 Credits 🎭"
-    "🖼️ Art: AI-generated\n🎵 Music: Pixabay\n🎙️ Voice Acting: Manami Sarkar\n✍️ Writing & Development: BlackNinjaKR"
+    scene black
+    with Pause(0.5)
 
-    "I’m still learning, and your support means the world to me."
-    "Thank you for being part of this journey. ❤️"
+    show text "Thank you for playing \"The Echoes of Silence.\"" with dissolve
+    with Pause(1.5)
 
-    "~ BlackNinjaKR"
+    hide text with dissolve
+    with Pause(0.5)
 
+    show text "This is my first visual novel project which I completed until the very end, and I know it's far from perfect.\nI truly appreciate you taking the time to experience it, despite any flaws or mistakes I may have made." with dissolve
+    with Pause(2.5)
+
+    hide text with dissolve
+    with Pause(0.5)
+
+    show text "🎭 Credits 🎭" with dissolve
+    with Pause(1)
+
+    hide text with dissolve
+    with Pause(0.5)
+
+    show text "🖼️ Art: AI-generated\n🎵 Music: Pixabay\n🎙️ Voice Acting: Manami Sarkar\n✍️ Writing & Development: BlackNinjaKR" with dissolve
+    with Pause(1.5)
+
+    hide text with dissolve
+    with Pause(0.5)
+
+    show text "I'm still learning, and your support means the world to me." with dissolve
+    with Pause(1.5)
+
+    hide text with dissolve
+    with Pause(0.5)
+
+    show text "Thank you for being a part of this journey with me. ❤️" with dissolve
+    with Pause(1.5)
+
+    hide text with dissolve
+    with Pause(0.5)
+
+    show text "~BlackNinjaKR" with dissolve
+    with Pause(1.5)
+
+    hide text with dissolve
+    with Pause(0.5)
 
     return
